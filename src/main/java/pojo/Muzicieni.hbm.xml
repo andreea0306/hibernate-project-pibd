@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="pojo.Muzicieni" table="muzicieni" catalog="PIBD"
+		optimistic-lock="version">
+		<id name="idmuzician" type="java.lang.Long">
+			<column name="idmuzician" />
+			<generator class="identity" />
+		</id>
+		<property name="nume" type="string">
+			<column name="nume" length="45" />
+		</property>
+		<property name="prenume" type="string">
+			<column name="prenume" length="45" />
+		</property>
+		<property name="datanasterii" type="date">
+			<column name="datanasterii" length="10" />
+		</property>
+		<property name="trupa" type="string">
+			<column name="trupa" length="45" />
+		</property>
+		<set name="colectii" table="colectii" inverse="true"
+			lazy="true" fetch="select">
+			<key>
+				<column name="idmuzician" />
+			</key>
+			<one-to-many class="pojo.Colectie" />
+		</set>
+	</class>
+</hibernate-mapping>

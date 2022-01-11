@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+ <servlet>
+        <servlet-name>MuzicieniController</servlet-name>
+        <servlet-class>Controller.MuzicieniController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>StiluriMuzicaleController</servlet-name>
+        <servlet-class>Controller.StiluriMuzicaleController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ColectieController</servlet-name>
+        <servlet-class>Controller.ColectieController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MuzicieniController</servlet-name>
+        <url-pattern>/MuzicieniController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StiluriMuzicaleController</servlet-name>
+        <url-pattern>/StiluriMuzicaleController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ColectieController</servlet-name>
+        <url-pattern>/ColectieController</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>adauga_muzicieni.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
